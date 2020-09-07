@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run sapui5app1-html5module",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/sapui5app1-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/nshtml5module/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/html5module",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/sapui5app1/html5module\"}"
+      },
+      "envFile": "${workspaceFolder}/html5module/.env1",
+      "preLaunchTask": "Build sapui5app1"
+    }
+  ]
+}

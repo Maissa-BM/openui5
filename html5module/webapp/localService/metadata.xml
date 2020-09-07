@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="catalogservice"
+            xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="portfolios" EntityType="catalogservice.portfolios"/>
+            </EntityContainer>
+            <EntityType Name="portfolios">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="PORTFOLIO_NUMBER" Type="Edm.String" MaxLength="2"/>
+                <Property Name="PORTFOLIO_NAME" Type="Edm.String" MaxLength="30"/>
+                <Property Name="PORTFOLIO_SHARES" Type="Edm.Decimal" Scale="19" Precision="23"/>
+                <Property Name="ISIN" Type="Edm.String" MaxLength="20"/>
+                <Property Name="COMPANY_NAME" Type="Edm.String" MaxLength="30"/>
+                <Property Name="SECTOR_LV1" Type="Edm.String" MaxLength="100"/>
+                <Property Name="SECTOR_LV2" Type="Edm.String" MaxLength="100"/>
+                <Property Name="WEIGHT_FLAG" Type="Edm.String" MaxLength="30"/>
+                <Property Name="WEIGHTING" Type="Edm.Decimal" Scale="19" Precision="23"/>
+                <Property Name="NAICS_NUM" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NAICS_NAME" Type="Edm.String" MaxLength="100"/>
+                <Property Name="SCENARIO" Type="Edm.String" MaxLength="6"/>
+                <Property Name="ADAPTIVE_CAP" Type="Edm.String" MaxLength="30"/>
+                <Property Name="REGION" Type="Edm.String" MaxLength="30"/>
+                <Property Name="COUNTRY" Type="Edm.String" MaxLength="30"/>
+                <Property Name="TECHNOLOGY" Type="Edm.String" MaxLength="30"/>
+                <Property Name="YEAR" Type="Edm.String" MaxLength="4"/>
+                <Property Name="EBITDA" Type="Edm.Decimal" Scale="19" Precision="35"/>
+                <Property Name="EBIT" Type="Edm.Decimal" Scale="19" Precision="35"/>
+                <Property Name="DEPRECIATION" Type="Edm.Decimal" Scale="19" Precision="35"/>
+                <Property Name="SALES" Type="Edm.Decimal" Scale="19" Precision="35"/>
+                <Property Name="VOLUME" Type="Edm.Decimal" Scale="19" Precision="35"/>
+            </EntityType>
+            <Annotations Target="catalogservice.portfolios">
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Company name"/>
+                                <PropertyValue Property="Value" Path="COMPANY_NAME"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TypeName" String="Scenario"/>
+                        <PropertyValue Property="TypeNamePlural" String="Scenarios"/>
+                        <PropertyValue Property="title">
+                            <Record>
+                                <PropertyValue Property="Label" String="Portfolios"/>
+                                <PropertyValue Property="Value" Path="PORTFOLIO_NUMBER"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PORTFOLIO_NUMBER"/>
+                            <PropertyValue Property="Label" String="Portfolio Nr."/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PORTFOLIO_NAME"/>
+                            <PropertyValue Property="Label" String="Portfolio Name"/>
+                            <PropertyValue Property="position" Int="50"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PORTFOLIO_SHARES"/>
+                            <PropertyValue Property="Label" String="Portfolio shares"/>
+                            <PropertyValue Property="position" Int="20"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ISIN"/>
+                            <PropertyValue Property="Label" String="ISIN"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMPANY_NAME"/>
+                            <PropertyValue Property="Label" String="Company name"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SECTOR_LV1"/>
+                            <PropertyValue Property="Label" String="Sector lvl 1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SECTOR_LV2"/>
+                            <PropertyValue Property="Label" String="Sector lvl 2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="WEIGHT_FLAG"/>
+                            <PropertyValue Property="Label" String="Weight flag"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="WEIGHTING"/>
+                            <PropertyValue Property="Label" String="Weighting"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="NAICS_NUM"/>
+                            <PropertyValue Property="Label" String="NAICS Nr."/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="NAICS_NAME"/>
+                            <PropertyValue Property="Label" String="NAICS name"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SCENARIO"/>
+                            <PropertyValue Property="Label" String="Scenario"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ADAPTIVE_CAP"/>
+                            <PropertyValue Property="Label" String="Adaptive cap"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="REGION"/>
+                            <PropertyValue Property="Label" String="Region"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COUNTRY"/>
+                            <PropertyValue Property="Label" String="Country"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TECHNOLOGY"/>
+                            <PropertyValue Property="Label" String="Technology"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="YEAR"/>
+                            <PropertyValue Property="Label" String="Year"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EBITDA"/>
+                            <PropertyValue Property="Label" String="EBITDA"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EBIT"/>
+                            <PropertyValue Property="Label" String="EBIT"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DEPRECIATION"/>
+                            <PropertyValue Property="Label" String="Depreciation"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SALES"/>
+                            <PropertyValue Property="Label" String="Sales"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VOLUME"/>
+                            <PropertyValue Property="Label" String="Volume"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ISIN</PropertyPath>
+                        <PropertyPath>YEAR</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="catalogservice.portfolios/ISIN">
+                <Annotation Term="Common.Label" String="ISIN"/>
+            </Annotations>
+            <Annotations Target="catalogservice.portfolios/SCENARIO">
+                <Annotation Term="Common.Label" String="Scenario"/>
+            </Annotations>
+            <Annotations Target="catalogservice.portfolios/YEAR">
+                <Annotation Term="Common.Label" String="Year"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

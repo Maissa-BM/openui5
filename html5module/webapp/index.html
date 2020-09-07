@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>openSAP - Developing Web Apps with SAPUI5</title>
+    <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_belize" data-sap-ui-resourceroots='{"ns.html5module": "./"}' data-sap-ui-compatVersion="edge"
+      data-sap-ui-oninit="module:sap/ui/core/ComponentSupport" data-sap-ui-async="true" data-sap-ui-frameOptions="trusted"
+      data-sap-ui-preload="async" data-sap-ui-libs="sap.m">
+      </script>
+    <script>
+      sap.ui.getCore().attachInit(function () {
+
+        //"UNIT1" 
+        /* var oImage = new sap.m.Image({
+            src: "https://miro.medium.com/max/700/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"
+        }).placeAt("content");
+        oImage.setHeight("400px"); */
+       
+        /* "UNIT2 sap.ui.xmlview({
+            viewName: "opensap.myapp.view.App"
+        }).placeAt("content");*/
+
+        //UNIT4
+        new sap.ui.core.ComponentContainer({
+          name: "ns.html5module"
+        }).placeAt("content");
+      });
+    </script>
+  </head>
+
+  <body class="sapUiBody" id="content">
+    <!-- <div data-sap-ui-component data-name="ns.html5module" data-id="container" data-settings='{"id" : "html5module"}'>
+    </div> -->
+  </body>
+
+</html>
